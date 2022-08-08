@@ -30,7 +30,7 @@ References:
 
 Run following commands in Terminal (Linux / MacOS) or CMD / Git Bash (Windows)
 
-git clone https://github.com/kosoewin/aya_lab.git
+git clone https://github.com/kosoewin/docker-env.git
 
 cd aya_lab
 
