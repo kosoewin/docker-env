@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_check_update = false
 
 
-  # Master node where ansible will be installed
+  # Master node where k8s will be installed
   config.vm.define "k8s_master" do |k8s_master|
     k8s_master.vm.box = "ubuntu/focal64"
     k8s_master.vm.hostname = "docker-env"
