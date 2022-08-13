@@ -36,7 +36,7 @@ References:
 
 Run following commands in Terminal (Linux / MacOS) or CMD / Git Bash (Windows)
 
-git clone https://github.com/kosoewin/dk8s-lab.git
+git clone https://github.com/kosoewin/k8s-lab.git
 
 cd k8s-lab
 
