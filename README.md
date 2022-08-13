@@ -1,4 +1,4 @@
-# docker-env
+# kubernetes-lab
 
 # System Requirements
 *	CPU: Intel Core i3, Core i5 or equivalents
