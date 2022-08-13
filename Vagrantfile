@@ -13,11 +13,24 @@ Vagrant.configure("2") do |config|
 
 
   # Master node where ansible will be installed
-  config.vm.define "docker_env" do |docker_env|
-    docker_env.vm.box = "ubuntu/focal64"
-    docker_env.vm.hostname = "docker-env"
-    docker_env.vm.network "forwarded_port", guest: 3000, host: 3000
-    docker_env.vm.network "private_network", ip: "192.168.101.10"
-    docker_env.vm.provision "shell", path: "setup.sh"
+  config.vm.define "k8s_master" do |k8s_master|
+    k8s_master.vm.box = "ubuntu/focal64"
+    k8s_master.vm.hostname = "docker-env"
+    k8s_master.vm.network "forwarded_port", guest: 3000, host: 3000
+    k8s_master.vm.network "private_network", ip: "192.168.101.10"
+    k8s_master.vm.provision "shell", path: "setup.sh"
   end
+  config.vm.define "k8s_worker01" do |k8s_worker01|
+    k8s_worker01.vm.box = "ubuntu/focal64"
+    k8s_worker01.vm.hostname = "k8s_worker01"
+    k8s_worker01.vm.network "private_network", ip: "192.168.101.20"
+    k8s_worker01.vm.provision "shell", path: "setup.sh"
+  end
+  config.vm.define "k8s_worker02" do |k8s_worker02|
+    k8s_worker02.vm.box = "ubuntu/focal64"
+    k8s_worker02.vm.hostname = "k8s_wroker02"
+    k8s_worker02.vm.network "private_network", ip: "192.168.101.20"
+    k8s_worker02.vm.provision "shell", path: "setup.sh"
+  end
+  
 end
