@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
     k8s_worker01.vm.network "private_network", ip: "192.168.101.20"
     k8s_worker01.vm.provision "shell", path: "generate_hosts.sh"
   end
-  config.vm.define "k8sworker02" do |k8s_worker02|
+  config.vm.define "k8sworker02" do |k8sworker02|
     k8s_worker02.vm.box = "ubuntu/focal64"
     k8s_worker02.vm.hostname = "k8sworker02"
     k8s_worker02.vm.network "private_network", ip: "192.168.101.20"
