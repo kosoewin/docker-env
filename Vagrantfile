@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
 
-  config.vm.provider "virtualbox" do |dockerlab|
+  config.vm.provider "virtualbox" do |k8slab|
     dockerlab.memory = 512
     dockerlab.cpus = 2
   end
@@ -18,19 +18,19 @@ Vagrant.configure("2") do |config|
     k8s_master.vm.hostname = "docker-env"
     k8s_master.vm.network "forwarded_port", guest: 3000, host: 3000
     k8s_master.vm.network "private_network", ip: "192.168.101.10"
-    k8s_master.vm.provision "shell", path: "setup.sh"
+    k8s_master.vm.provision "shell", path: "generate_hosts.sh"
   end
   config.vm.define "k8s_worker01" do |k8s_worker01|
     k8s_worker01.vm.box = "ubuntu/focal64"
     k8s_worker01.vm.hostname = "k8s_worker01"
     k8s_worker01.vm.network "private_network", ip: "192.168.101.20"
-    k8s_worker01.vm.provision "shell", path: "setup.sh"
+    k8s_worker01.vm.provision "shell", path: "generate_hosts.sh"
   end
   config.vm.define "k8s_worker02" do |k8s_worker02|
     k8s_worker02.vm.box = "ubuntu/focal64"
     k8s_worker02.vm.hostname = "k8s_wroker02"
     k8s_worker02.vm.network "private_network", ip: "192.168.101.20"
-    k8s_worker02.vm.provision "shell", path: "setup.sh"
+    k8s_worker02.vm.provision "shell", path: "generate_hosts.sh"
   end
   
 end
