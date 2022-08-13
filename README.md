@@ -36,16 +36,13 @@ References:
 
 Run following commands in Terminal (Linux / MacOS) or CMD / Git Bash (Windows)
 
-git clone https://github.com/kosoewin/docker-env.git
+git clone https://github.com/kosoewin/dk8s-lab.git
 
-cd aya_lab
+cd k8s-lab
 
 vagrant plugin install vagrant-vbguest --plugin-version 0.21
 
 vagrant up
-
-* check your vagrant boxes running or not
-
 
 vagrant ssh status
 
