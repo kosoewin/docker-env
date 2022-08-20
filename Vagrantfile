@@ -6,6 +6,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |k8slab|
     k8slab.memory = 512
     k8slab.cpus = 2
+    k8slab.gui = true
   end
 
   # Will not check for box updates during every startup.
