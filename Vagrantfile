@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
     k8smaster.vm.network "private_network", ip: "192.168.101.10"
     k8smaster.vm.provision "shell", path: "generate_hosts.sh"
 	  k8smaster.vm.provider :virtualbox do |k8smaster|
-	        k8smaster.gui = true
+	  k8smaster.gui = true
           k8smaster.customize ["modifyvm", :id, "--memory", "2048"]
           k8smaster.customize ["modifyvm", :id, "--cpus", "2"]
         end
@@ -28,8 +28,8 @@ Vagrant.configure("2") do |config|
 	  k8sworker01.vm.provider :virtualbox do |k8sworker01|
           k8sworker01.customize ["modifyvm", :id, "--memory", "512"]
           k8sworker01.customize ["modifyvm", :id, "--cpus", "2"]
-		      k8sworker01.gui = true 
-		    end
+          k8sworker01.gui = true 
+	end
   end
   
   config.vm.define "k8sworker02" do |k8sworker02|
@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
 	  k8sworker02.vm.provider :virtualbox do |k8sworker02|
           k8sworker02.customize ["modifyvm", :id, "--memory", "512"]
           k8sworker02.customize ["modifyvm", :id, "--cpus", "2"]
-		      k8sworker02.gui = true
-		     end
+          k8sworker02.gui = true
+	end
   end
 end
