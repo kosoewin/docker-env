@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
     k8smaster.vm.hostname = "k8smaster"
     k8smaster.vm.network "private_network", ip: "192.168.101.10"
     k8smaster.vm.provision "shell", path: "generate_hosts.sh"
-    k8smaster.vm.provision "shell", path: "k8s_setup.sh"
+    k8smaster.vm.provision "shell", path: "setup_k8s.sh"
 	  k8smaster.vm.provider :virtualbox do |k8smaster|
           k8smaster.customize ["modifyvm", :id, "--memory", "2048"]
           k8smaster.customize ["modifyvm", :id, "--cpus", "2"]
@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
     k8sworker01.vm.hostname = "k8sworker01"
     k8sworker01.vm.network "private_network", ip: "192.168.101.20"
     k8sworker01.vm.provision "shell", path: "generate_hosts.sh"
-    k8sworker01.vm.provision "shell", path: "k8s_setup.sh"
+    k8sworker01.vm.provision "shell", path: "setup_k8s.sh"
 	  k8sworker01.vm.provider :virtualbox do |k8sworker01|
           k8sworker01.customize ["modifyvm", :id, "--memory", "512"]
           k8sworker01.customize ["modifyvm", :id, "--cpus", "2"]
@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
     k8sworker02.vm.hostname = "k8sworker02"
     k8sworker02.vm.network "private_network", ip: "192.168.101.30"
     k8sworker02.vm.provision "shell", path: "generate_hosts.sh"
-    k8sworker02.vm.provision "shell", path: "k8s_setup.sh"
+    k8sworker02.vm.provision "shell", path: "setup_k8s.sh"
 	  k8sworker02.vm.provider :virtualbox do |k8sworker02|
           k8sworker02.customize ["modifyvm", :id, "--memory", "512"]
           k8sworker02.customize ["modifyvm", :id, "--cpus", "2"]
